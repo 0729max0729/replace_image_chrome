@@ -7,19 +7,14 @@
     .image-group { margin-bottom: 20px; }
     .image-group label { display: block; font-weight: bold; }
     .image-group textarea { width: 100%; height: 100px; }
-    .image-group button { margin-top: 5px; }
   </style>
 </head>
 <body>
-  <h2>Set Custom Replacement Image Groups</h2>
-  <div id="imageGroupsContainer">
-    <div class="image-group">
-      <label>Image Group 1:</label>
-      <textarea class="image-group-textarea" placeholder="https://example.com/image1.jpg"></textarea>
-      <button class="delete-group">Delete Group</button>
-    </div>
+  <h2>Set Custom Replacement Images</h2>
+  <div class="image-group">
+    <label>Image Group:</label>
+    <textarea id="imageGroupTextarea" placeholder="https://example.com/image1.jpg"></textarea>
   </div>
-  <button id="addGroup">Add New Image Group</button>
 
   <h2>Set Replacement Probability</h2>
   <label for="probability">Enter replacement probability (0-100):</label>
