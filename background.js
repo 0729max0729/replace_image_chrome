@@ -1,5 +1,5 @@
 chrome.webNavigation.onCompleted.addListener(async (details) => {
-  if (details.frameId === 0) {
+  if (details.frameId === 0 && details.url.startsWith("http")) {
     // 從同步儲存空間中取得使用者設定的圖片 URL 和替換機率
     chrome.storage.sync.get(["imageGroup", "probability"], (data) => {
       const imageUrls = data.imageGroup && data.imageGroup.length > 0 ? data.imageGroup : ["https://source.unsplash.com/random/800x600"];
@@ -13,7 +13,8 @@ chrome.webNavigation.onCompleted.addListener(async (details) => {
       });
     });
   }
-}, { url: [{ urlMatches: "*://*/*" }] });
+});
+
 
 // 圖片替換函數，使用指定的機率來決定是否替換圖片
 function replaceImages(imageUrls, probability) {
