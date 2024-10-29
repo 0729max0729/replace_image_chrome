@@ -13,7 +13,7 @@ chrome.webNavigation.onCompleted.addListener(async (details) => {
       });
     });
   }
-}, { url: [{ urlMatches: "https://www.google.com/search" }] });
+}, { url: [{ urlMatches: "*://*/*" }] });
 
 // 圖片替換函數，使用指定的機率來決定是否替換圖片
 function replaceImages(imageUrls, probability) {
